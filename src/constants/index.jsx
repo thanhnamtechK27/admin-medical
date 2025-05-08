@@ -1,76 +1,34 @@
-import { ChartColumn, Home, NotepadText, Package, PackagePlus, Settings, ShoppingBag, UserCheck, UserPlus, Users } from "lucide-react";
+import { Book, Home, Settings, Users, Clipboard, Stethoscope   } from "lucide-react";
 
 import ProfileImage from "@/assets/profile-image.jpg";
-import ProductImage from "@/assets/product-image.jpg";
+import DoctorImage from "@/assets/doctor.jpg";
 
 export const navbarLinks = [
     {
-        title: "Dashboard",
         links: [
             {
-                label: "Dashboard",
+                label: "Tổng quan",
                 icon: Home,
                 path: "/",
             },
             {
-                label: "Analytics",
-                icon: ChartColumn,
-                path: "/analytics",
-            },
-            {
-                label: "Reports",
-                icon: NotepadText,
-                path: "/reports",
-            },
-        ],
-    },
-    {
-        title: "Customers",
-        links: [
-            {
-                label: "Customers",
+                label: "Quản lý bác sĩ",
                 icon: Users,
-                path: "/customers",
+                path: "/doctor-management",
             },
             {
-                label: "New customer",
-                icon: UserPlus,
-                path: "/new-customer",
+                label: "Quản lý chuyên khoa",
+                icon: Book,
+                path: "/specialization-management",
             },
             {
-                label: "Verified customers",
-                icon: UserCheck,
-                path: "/verified-customers",
-            },
-        ],
-    },
-    {
-        title: "Products",
-        links: [
-            {
-                label: "Products",
-                icon: Package,
-                path: "/products",
-            },
-            {
-                label: "New product",
-                icon: PackagePlus,
-                path: "/new-product",
-            },
-            {
-                label: "Inventory",
-                icon: ShoppingBag,
-                path: "/inventory",
-            },
-        ],
-    },
-    {
-        title: "Settings",
-        links: [
-            {
-                label: "Settings",
-                icon: Settings,
-                path: "/settings",
+                label: "Hồ sơ bệnh án",
+                icon: Clipboard,
+                path: "/medical-records",
+            },            {
+                label: "Quản lý dịch vụ",
+                icon: Stethoscope ,
+                path: "/service-management",
             },
         ],
     },
@@ -183,7 +141,7 @@ export const topProducts = [
     {
         number: 1,
         name: "Wireless Headphones",
-        image: ProductImage,
+        image: DoctorImage,
         description: "High-quality noise-canceling wireless headphones.",
         price: 99.99,
         status: "In Stock",
@@ -192,7 +150,7 @@ export const topProducts = [
     {
         number: 2,
         name: "Smartphone",
-        image: ProductImage,
+        image: DoctorImage,
         description: "Latest 5G smartphone with excellent camera features.",
         price: 799.99,
         status: "In Stock",
@@ -201,7 +159,7 @@ export const topProducts = [
     {
         number: 3,
         name: "Gaming Laptop",
-        image: ProductImage,
+        image: DoctorImage,
         description: "Powerful gaming laptop with high-end graphics.",
         price: 1299.99,
         status: "In Stock",
@@ -210,7 +168,7 @@ export const topProducts = [
     {
         number: 4,
         name: "Smartwatch",
-        image: ProductImage,
+        image: DoctorImage,
         description: "Stylish smartwatch with fitness tracking features.",
         price: 199.99,
         status: "Out of Stock",
@@ -219,7 +177,7 @@ export const topProducts = [
     {
         number: 5,
         name: "Bluetooth Speaker",
-        image: ProductImage,
+        image: DoctorImage,
         description: "Portable Bluetooth speaker with deep bass sound.",
         price: 59.99,
         status: "In Stock",
@@ -228,7 +186,7 @@ export const topProducts = [
     {
         number: 6,
         name: "4K Monitor",
-        image: ProductImage,
+        image: DoctorImage,
         description: "Ultra HD 4K monitor with stunning color accuracy.",
         price: 399.99,
         status: "In Stock",
@@ -237,7 +195,7 @@ export const topProducts = [
     {
         number: 7,
         name: "Mechanical Keyboard",
-        image: ProductImage,
+        image: DoctorImage,
         description: "Mechanical keyboard with customizable RGB lighting.",
         price: 89.99,
         status: "In Stock",
@@ -246,7 +204,7 @@ export const topProducts = [
     {
         number: 8,
         name: "Wireless Mouse",
-        image: ProductImage,
+        image: DoctorImage,
         description: "Ergonomic wireless mouse with precision tracking.",
         price: 49.99,
         status: "In Stock",
@@ -255,7 +213,7 @@ export const topProducts = [
     {
         number: 9,
         name: "Action Camera",
-        image: ProductImage,
+        image: DoctorImage,
         description: "Waterproof action camera with 4K video recording.",
         price: 249.99,
         status: "In Stock",
@@ -264,7 +222,7 @@ export const topProducts = [
     {
         number: 10,
         name: "External Hard Drive",
-        image: ProductImage,
+        image: DoctorImage,
         description: "Portable 2TB external hard drive for data storage.",
         price: 79.99,
         status: "Out of Stock",
