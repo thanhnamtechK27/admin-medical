@@ -5,6 +5,7 @@ import DoctorManagementPage from "@/pages/doctor-management";
 import SpecializationManagementPage from "@/pages/specialization-management";
 import MedicalRecordsPage from "@/pages/medical-records"; 
 import ServiceManagement from "@/pages/service-management"; 
+import ProfileManagement from "@/pages/profile-management"; 
 
 import Layout from "@/pages/layout";
 import DashboardPage from "./pages/dashboard";  
@@ -34,6 +35,10 @@ function App() {
                 {
                     path: "service-management",
                     element: <ServiceManagement />,
+                },
+                {
+                    path: "profile-management",
+                    element: <ProfileManagement/>,
                 },
             ],
         },
