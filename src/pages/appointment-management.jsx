@@ -27,6 +27,8 @@ const initialAppointments = [
     date: "2025-05-09",
     issue: "Khám tổng quát",
     status: "Đã hủy",
+    cancelReason: "Khách không thể đến",
+    refundAmount: 300000,
   },
 ];
 
@@ -56,10 +58,16 @@ const AppointmentManagement = () => {
     );
   };
 
+  const cancelledAppointments = appointments.filter(
+    (appt) => appt.status === "Đã hủy"
+  );
+
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Quản lý lịch hẹn</h1>
-      <div className="overflow-x-auto bg-white shadow rounded">
+
+      {/* Bảng tất cả lịch hẹn */}
+      <div className="overflow-x-auto bg-white shadow rounded mb-8">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-100 text-gray-600 text-left text-sm">
             <tr>
@@ -84,8 +92,12 @@ const AppointmentManagement = () => {
                 <td className="py-3 px-4">
                   <select
                     value={item.status}
-                    onChange={(e) => handleStatusChange(item.id, e.target.value)}
-                    className={`text-xs font-medium px-3 py-1 rounded-full appearance-none ${getStatusStyle(item.status)} focus:outline-none`}
+                    onChange={(e) =>
+                      handleStatusChange(item.id, e.target.value)
+                    }
+                    className={`text-xs font-medium px-3 py-1 rounded-full appearance-none ${getStatusStyle(
+                      item.status
+                    )} focus:outline-none`}
                   >
                     {statusOptions.map((status) => (
                       <option key={status} value={status}>
@@ -96,6 +108,46 @@ const AppointmentManagement = () => {
                 </td>
               </tr>
             ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Bảng lịch đã hủy */}
+      <h2 className="text-xl font-semibold mb-3">Danh sách lịch đã hủy</h2>
+      <div className="overflow-x-auto bg-white shadow rounded">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-red-50 text-red-700 text-left text-sm">
+            <tr>
+              <th className="py-3 px-4">ID</th>
+              <th className="py-3 px-4">Tên</th>
+              <th className="py-3 px-4">Email</th>
+              <th className="py-3 px-4">Ngày hủy</th>
+              <th className="py-3 px-4">Lý do</th>
+              <th className="py-3 px-4">Hoàn tiền (VNĐ)</th>
+            </tr>
+          </thead>
+          <tbody className="text-sm">
+            {cancelledAppointments.map((item) => (
+              <tr key={item.id} className="border-t">
+                <td className="py-3 px-4">{item.id}</td>
+                <td className="py-3 px-4">{item.name}</td>
+                <td className="py-3 px-4">{item.email}</td>
+                <td className="py-3 px-4">{item.date}</td>
+                <td className="py-3 px-4">{item.cancelReason || "Không có"}</td>
+                <td className="py-3 px-4">
+                  {item.refundAmount
+                    ? item.refundAmount.toLocaleString("vi-VN")
+                    : "0"}
+                </td>
+              </tr>
+            ))}
+            {cancelledAppointments.length === 0 && (
+              <tr>
+                <td colSpan="6" className="text-center py-4 text-gray-500">
+                  Không có lịch hẹn nào bị hủy.
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
