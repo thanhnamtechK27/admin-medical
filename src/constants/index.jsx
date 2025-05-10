@@ -1,4 +1,4 @@
-import { Book, Home, Settings, Users, Clipboard, Stethoscope   } from "lucide-react";
+import { Book, Home, Settings, Users, Clipboard,CalendarDays, Stethoscope   } from "lucide-react";
 
 import ProfileImage from "@/assets/profile-image.jpg";
 import DoctorImage from "@/assets/doctor.jpg";
@@ -25,11 +25,18 @@ export const navbarLinks = [
                 label: "Hồ sơ bệnh án",
                 icon: Clipboard,
                 path: "/medical-records",
-            },            {
+            },            
+            {
                 label: "Quản lý dịch vụ",
                 icon: Stethoscope ,
                 path: "/service-management",
             },
+            {
+                label: "Quản lý lịch hẹn",
+                icon: CalendarDays,
+                path: "/appointment-management",
+            },
+            
         ],
     },
 ];

@@ -6,6 +6,7 @@ import SpecializationManagementPage from "@/pages/specialization-management";
 import MedicalRecordsPage from "@/pages/medical-records"; 
 import ServiceManagement from "@/pages/service-management"; 
 import ProfileManagement from "@/pages/profile-management"; 
+import AppointmentManagement from "@/pages/appointment-management"; 
 
 import Layout from "@/pages/layout";
 import DashboardPage from "./pages/dashboard";  
@@ -39,6 +40,10 @@ function App() {
                 {
                     path: "profile-management",
                     element: <ProfileManagement/>,
+                },
+                {
+                    path: "appointment-management",
+                    element: <AppointmentManagement/>,
                 },
             ],
         },
